@@ -123,6 +123,7 @@ class InputFieldStyle {
   final TextStyle textStyle;
   final TextStyle errorLabelTextStyle;
   final TextStyle errorTextStyle;
+  final Color cursorColor;
   final Color borderColor;
   final Color focusBorderColor;
   final Color errorBorderColor;
@@ -134,6 +135,7 @@ class InputFieldStyle {
     required this.textStyle,
     required this.errorLabelTextStyle,
     required this.errorTextStyle,
+    required this.cursorColor,
     required this.borderColor,
     required this.focusBorderColor,
     required this.errorBorderColor,
@@ -147,6 +149,7 @@ class InputFieldStyle {
     TextStyle? textStyle,
     TextStyle? errorLabelTextStyle,
     TextStyle? errorTextStyle,
+    Color? cursorColor,
     Color? borderColor,
     Color? focusBorderColor,
     Color? errorBorderColor,
@@ -159,6 +162,7 @@ class InputFieldStyle {
       textStyle: textStyle ?? this.textStyle,
       errorLabelTextStyle: errorLabelTextStyle ?? this.errorLabelTextStyle,
       errorTextStyle: errorTextStyle ?? this.errorTextStyle,
+      cursorColor: cursorColor ?? this.cursorColor,
       borderColor: borderColor ?? this.borderColor,
       focusBorderColor: focusBorderColor ?? this.focusBorderColor,
       errorBorderColor: errorBorderColor ?? this.errorBorderColor,
