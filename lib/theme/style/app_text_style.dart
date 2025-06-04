@@ -112,7 +112,7 @@ abstract class AppTextStyle {
   );
 }
 
-class AppStyleExtension extends ThemeExtension<AppStyleExtension> {
+class AppTextStyleExtension extends ThemeExtension<AppTextStyleExtension> {
   final TextStyle appBarTitle;
   final TextStyle title1;
   final TextStyle title2;
@@ -123,7 +123,7 @@ class AppStyleExtension extends ThemeExtension<AppStyleExtension> {
   final TextStyle header3;
   final TextStyle header5;
   final TextStyle header6;
-  AppStyleExtension({
+  AppTextStyleExtension({
     required this.appBarTitle,
     required this.title1,
     required this.title2,
@@ -137,7 +137,7 @@ class AppStyleExtension extends ThemeExtension<AppStyleExtension> {
   });
 
   @override
-  AppStyleExtension copyWith({
+  AppTextStyleExtension copyWith({
     TextStyle? appBarTitle,
     TextStyle? title1,
     TextStyle? title2,
@@ -149,7 +149,7 @@ class AppStyleExtension extends ThemeExtension<AppStyleExtension> {
     TextStyle? header5,
     TextStyle? header6,
   }) {
-    return AppStyleExtension(
+    return AppTextStyleExtension(
       appBarTitle: appBarTitle ?? this.appBarTitle,
       title1: title1 ?? this.title1,
       title2: title2 ?? this.title2,
@@ -164,8 +164,8 @@ class AppStyleExtension extends ThemeExtension<AppStyleExtension> {
   }
 
   @override
-  ThemeExtension<AppStyleExtension> lerp(
-    covariant ThemeExtension<AppStyleExtension>? other,
+  ThemeExtension<AppTextStyleExtension> lerp(
+    covariant ThemeExtension<AppTextStyleExtension>? other,
     double t,
   ) {
     return this;
