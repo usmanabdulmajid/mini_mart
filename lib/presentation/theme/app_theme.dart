@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mini_mart/theme/style/app_palette.dart';
-import 'package:mini_mart/theme/style/app_style.dart';
-import 'package:mini_mart/theme/style/app_text_style.dart';
+import 'package:mini_mart/presentation/theme/style/app_palette.dart';
+import 'package:mini_mart/presentation/theme/style/app_style.dart';
+import 'package:mini_mart/presentation/theme/style/app_text_style.dart';
 
 abstract class AppTheme {
   //---------------light theme---------------//
@@ -9,8 +9,8 @@ abstract class AppTheme {
   static final light = ThemeData(
     brightness: Brightness.light,
     primaryColor: AppPalette.primary.light,
-    colorScheme: ColorScheme.light(
-      primary: AppPalette.primary.light,
+    colorScheme: ColorScheme.fromSeed(
+      seedColor: AppPalette.primary.light,
       secondary: AppPalette.secondary.light,
       background: AppPalette.backgroundColor.light,
     ),
@@ -51,8 +51,9 @@ abstract class AppTheme {
   static final dark = ThemeData(
     brightness: Brightness.dark,
     primaryColor: AppPalette.primary.dark,
-    colorScheme: ColorScheme.light(
-      primary: AppPalette.primary.dark,
+    colorScheme: ColorScheme.fromSeed(
+      brightness: Brightness.dark,
+      seedColor: AppPalette.primary.dark,
       secondary: AppPalette.secondary.dark,
       background: AppPalette.backgroundColor.dark,
     ),

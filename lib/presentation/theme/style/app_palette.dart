@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mini_mart/theme/style/theme_pair.dart';
+import 'package:mini_mart/presentation/theme/style/theme_pair.dart';
 
 abstract class AppPalette {
   static const white = Color(0XFFFFFFFF);

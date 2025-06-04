@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:mini_mart/theme/style/app_palette.dart';
-import 'package:mini_mart/theme/style/styles.dart';
-import 'package:mini_mart/theme/style/theme_pair.dart';
+import 'package:mini_mart/presentation/theme/style/app_palette.dart';
+import 'package:mini_mart/presentation/theme/style/styles.dart';
+import 'package:mini_mart/presentation/theme/style/theme_pair.dart';
 
 abstract class AppStyle {
   static final ThemePair<ToastStyle> toast = ThemePair(

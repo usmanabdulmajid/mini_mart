@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:mini_mart/theme/style/app_palette.dart';
+import 'package:mini_mart/presentation/theme/style/app_palette.dart';
 
 import 'theme_pair.dart';
 
