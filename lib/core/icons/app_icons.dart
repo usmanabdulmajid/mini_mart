@@ -7,4 +7,5 @@ abstract class AppIcons {
   static const String minus = 'assets/icon/minus_icon.svg';
   static const String notification = 'assets/icon/notification_icon.svg';
   static const String profile = 'assets/icon/profile_icon.svg';
+  static const String logo = 'assets/icon/logo_icon.svg';
 }

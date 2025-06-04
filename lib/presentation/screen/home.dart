@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mini_mart/core/icons/app_icons.dart';
 import 'package:mini_mart/presentation/component/custom_bottom_nav.dart';
+import 'package:mini_mart/presentation/screen/home_screen.dart';
 import 'package:mini_mart/presentation/theme/style/app_palette.dart';
 
 class Home extends StatefulWidget {
@@ -19,7 +20,7 @@ class _HomeState extends State<Home> {
       body: IndexedStack(
         index: _currentIndex,
         children: [
-          Center(child: Text('Home Screen')),
+          HomeScreen(),
           Center(child: Text('Cart Screen')),
           Center(child: Text('Favourites Screen')),
           Center(child: Text('Profile Screen')),
