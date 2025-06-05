@@ -20,6 +20,7 @@ abstract class AppPalette {
   static const gullGray = Color(0XFF94A3B8);
   static const geyser = Color(0XFFCBD5E1);
   static const mercury = Color(0XFFE6E6E6);
+  static const wildSand = Color(0XFFF5F5F5);
 
   static const primary = ThemePair<Color>(light: white, dark: black);
   static const secondary = ThemePair<Color>(light: black, dark: white);
@@ -29,6 +30,10 @@ abstract class AppPalette {
   );
 
   static const shimmerColor = ThemePair<Color>(light: mercury, dark: mercury);
+  static const dividerColor = ThemePair<Color>(
+    light: catSkillWhite,
+    dark: catSkillWhite,
+  );
 }
 
 class AppColorsExtension extends ThemeExtension<AppColorsExtension> {
@@ -36,12 +41,14 @@ class AppColorsExtension extends ThemeExtension<AppColorsExtension> {
   final Color secondary;
   final Color backgroundColor;
   final Color shimmerColor;
+  final Color dividerColor;
 
   AppColorsExtension({
     required this.primary,
     required this.secondary,
     required this.backgroundColor,
     required this.shimmerColor,
+    required this.dividerColor,
   });
 
   @override
@@ -50,12 +57,14 @@ class AppColorsExtension extends ThemeExtension<AppColorsExtension> {
     Color? secondary,
     Color? backgroundColor,
     Color? shimmerColor,
+    Color? dividerColor,
   }) {
     return AppColorsExtension(
       primary: primary ?? this.primary,
       secondary: secondary ?? this.secondary,
       backgroundColor: backgroundColor ?? this.backgroundColor,
       shimmerColor: shimmerColor ?? this.shimmerColor,
+      dividerColor: dividerColor ?? this.dividerColor,
     );
   }
 

@@ -22,6 +22,7 @@ abstract class AppTheme {
     secondary: AppPalette.secondary.light,
     backgroundColor: AppPalette.backgroundColor.light,
     shimmerColor: AppPalette.shimmerColor.light,
+    dividerColor: AppPalette.dividerColor.light,
   );
 
   static final _lightTextStyle = AppTextStyleExtension(
@@ -65,6 +66,7 @@ abstract class AppTheme {
     secondary: AppPalette.secondary.dark,
     backgroundColor: AppPalette.backgroundColor.dark,
     shimmerColor: AppPalette.shimmerColor.dark,
+    dividerColor: AppPalette.dividerColor.dark,
   );
 
   static final _darkTextStyle = AppTextStyleExtension(

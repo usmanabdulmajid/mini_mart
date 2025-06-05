@@ -22,16 +22,20 @@ class SearchTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context).appStyles.inputFieldStyle;
     return Container(
+      height: 38,
       decoration: BoxDecoration(
         border: Border.all(color: theme.borderColor, width: 1),
+        borderRadius: BorderRadius.circular(8),
       ),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Gap(8),
           SvgPicture.asset(AppIcons.search),
           Gap(8),
           Expanded(
             child: TextField(
+              cursorHeight: 16,
               cursorColor: theme.cursorColor,
               controller: controller,
               onChanged: onChanged,
