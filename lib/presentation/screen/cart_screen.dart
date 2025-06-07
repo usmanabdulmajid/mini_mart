@@ -39,6 +39,7 @@ class CartScreen extends StatelessWidget {
                         image: 'image',
                         price: 2,
                         quantity: 2,
+                        inStock: true,
                       ),
                       onIncrease: () {},
                       onDecrease: () {},

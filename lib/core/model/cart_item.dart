@@ -12,7 +12,7 @@ class CartItem {
     required this.image,
     required this.price,
     required this.quantity,
-    this.inStock = true,
+    required this.inStock,
   });
 
   CartItem copyWith({
