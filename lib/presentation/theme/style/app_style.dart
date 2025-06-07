@@ -180,6 +180,11 @@ abstract class AppStyle {
         fontWeight: FontWeight.w400,
         color: AppPalette.mountainMeadow,
       ),
+      itemOutStockTextStyle: TextStyle(
+        fontSize: 12,
+        fontWeight: FontWeight.w400,
+        color: AppPalette.radicalRed,
+      ),
       itemCountTextStyle: TextStyle(
         fontSize: 12,
         fontWeight: FontWeight.w400,
@@ -208,6 +213,11 @@ abstract class AppStyle {
         fontSize: 12,
         fontWeight: FontWeight.w400,
         color: AppPalette.mountainMeadow,
+      ),
+      itemOutStockTextStyle: TextStyle(
+        fontSize: 12,
+        fontWeight: FontWeight.w400,
+        color: AppPalette.radicalRed,
       ),
       itemCountTextStyle: TextStyle(
         fontSize: 12,

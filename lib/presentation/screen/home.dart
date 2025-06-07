@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mini_mart/core/icons/app_icons.dart';
 import 'package:mini_mart/presentation/component/custom_bottom_nav.dart';
+import 'package:mini_mart/presentation/screen/cart_screen.dart';
 import 'package:mini_mart/presentation/screen/home_screen.dart';
 import 'package:mini_mart/presentation/theme/style/app_palette.dart';
 
@@ -21,7 +22,7 @@ class _HomeState extends State<Home> {
         index: _currentIndex,
         children: [
           HomeScreen(),
-          Center(child: Text('Cart Screen')),
+          CartScreen(),
           Center(child: Text('Favourites Screen')),
           Center(child: Text('Profile Screen')),
         ],

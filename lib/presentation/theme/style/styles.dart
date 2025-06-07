@@ -214,6 +214,7 @@ class CartItemStyle {
   final TextStyle itemNameTextStyle;
   final TextStyle itemAmountTextStyle;
   final TextStyle itemInStockTextStyle;
+  final TextStyle itemOutStockTextStyle;
   final TextStyle itemCountTextStyle;
   CartItemStyle({
     required this.backgroundColor,
@@ -226,6 +227,7 @@ class CartItemStyle {
     required this.itemNameTextStyle,
     required this.itemAmountTextStyle,
     required this.itemInStockTextStyle,
+    required this.itemOutStockTextStyle,
     required this.itemCountTextStyle,
   });
 
@@ -240,6 +242,7 @@ class CartItemStyle {
     TextStyle? itemNameTextStyle,
     TextStyle? itemAmountTextStyle,
     TextStyle? itemInStockTextStyle,
+    TextStyle? itemOutStockTextStyle,
     TextStyle? itemCountTextStyle,
   }) {
     return CartItemStyle(
@@ -260,6 +263,8 @@ class CartItemStyle {
       itemNameTextStyle: itemNameTextStyle ?? this.itemNameTextStyle,
       itemAmountTextStyle: itemAmountTextStyle ?? this.itemAmountTextStyle,
       itemInStockTextStyle: itemInStockTextStyle ?? this.itemInStockTextStyle,
+      itemOutStockTextStyle:
+          itemOutStockTextStyle ?? this.itemOutStockTextStyle,
       itemCountTextStyle: itemCountTextStyle ?? this.itemCountTextStyle,
     );
   }
