@@ -11,7 +11,7 @@ class CustomAppbar extends StatelessWidget {
   Widget build(BuildContext context) {
     final textStyle = Theme.of(context).appTextStyles.appBarTitle;
     return Container(
-      color: Theme.of(context).scaffoldBackgroundColor,
+      color: Theme.of(context).appColors.primary,
       padding: EdgeInsets.fromLTRB(16, 16, 16, 0),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,

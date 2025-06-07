@@ -4,6 +4,7 @@ import 'package:mini_mart/presentation/component/custom_appbar.dart';
 import 'package:mini_mart/presentation/component/pop_button.dart';
 import 'package:mini_mart/presentation/component/product_card.dart';
 import 'package:mini_mart/presentation/component/search_textfield.dart';
+import 'package:mini_mart/presentation/screen/product_detail_screen.dart';
 import 'package:mini_mart/presentation/theme/app_theme.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -54,7 +55,18 @@ class HomeScreen extends StatelessWidget {
                             ),
                         itemCount: 6,
                         itemBuilder: (context, index) {
-                          return ProductCard();
+                          return GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder:
+                                      (context) => const ProductDetailScreen(),
+                                ),
+                              );
+                            },
+                            child: ProductCard(),
+                          );
                         },
                       ),
                     ),
