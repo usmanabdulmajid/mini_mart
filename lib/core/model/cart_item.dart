@@ -2,7 +2,7 @@ class CartItem {
   final String id;
   final String name;
   final String image;
-  final double price;
+  final num price;
   final int quantity;
   final bool inStock;
 
@@ -19,7 +19,7 @@ class CartItem {
     String? id,
     String? name,
     String? image,
-    double? price,
+    num? price,
     int? quantity,
     bool? inStock,
   }) {
@@ -33,7 +33,7 @@ class CartItem {
     );
   }
 
-  double get totalPrice => price * quantity;
+  num get totalPrice => price * quantity;
 
   @override
   bool operator ==(Object other) {

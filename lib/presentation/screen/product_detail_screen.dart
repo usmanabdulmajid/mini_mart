@@ -1,19 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gap/gap.dart';
+import 'package:mini_mart/core/model/cart_item.dart';
 import 'package:mini_mart/core/model/product.dart';
 import 'package:mini_mart/presentation/component/bullet_list_widget.dart';
 import 'package:mini_mart/presentation/component/custom_appbar.dart';
 import 'package:mini_mart/presentation/component/custom_button.dart';
 import 'package:mini_mart/presentation/component/pop_button.dart';
 import 'package:mini_mart/presentation/component/product_detail_card.dart';
+import 'package:mini_mart/presentation/provider/cart_provider.dart';
 import 'package:mini_mart/presentation/theme/app_theme.dart';
 
-class ProductDetailScreen extends StatelessWidget {
+class ProductDetailScreen extends ConsumerWidget {
   final Product product;
   const ProductDetailScreen({super.key, required this.product});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
     return SafeArea(
       child: Scaffold(
@@ -59,7 +62,20 @@ class ProductDetailScreen extends StatelessWidget {
             ],
           ),
           alignment: Alignment.topCenter,
-          child: CustomButton(text: 'Add to Cart', onPressed: () {}),
+          child: CustomButton(
+            text: 'Add to Cart',
+            onPressed: () {
+              final cartIem = CartItem(
+                id: product.id,
+                name: product.name,
+                image: product.image,
+                price: product.amount,
+                quantity: 1,
+                inStock: product.inStock,
+              );
+              ref.read(cartProvider.notifier).addItem(cartIem);
+            },
+          ),
         ),
       ),
     );
