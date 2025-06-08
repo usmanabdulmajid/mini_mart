@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:mini_mart/core/images/app_images.dart';
+import 'package:mini_mart/core/model/product.dart';
 import 'package:mini_mart/presentation/theme/app_theme.dart';
 
 class ProductCard extends StatelessWidget {
-  const ProductCard({super.key});
+  final Product product;
+  const ProductCard({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
@@ -19,12 +20,16 @@ class ProductCard extends StatelessWidget {
             color: theme.imageBackgroundColor,
             borderRadius: BorderRadius.circular(16),
           ),
-          child: Image.asset(AppImages.macbookPro),
+          child: Hero(
+            tag: product.id,
+            transitionOnUserGestures: true,
+            child: Image.asset(product.image),
+          ),
         ),
         const Gap(5.17),
-        Text('M4 Macbook Air 13” 256GB|Sky blue', style: theme.nameTextStyle),
+        Text(product.name, style: theme.nameTextStyle),
         const Gap(5.17),
-        Text('\$1000.00', style: theme.amountTextStyle),
+        Text('\$${product.amount}', style: theme.amountTextStyle),
       ],
     );
   }

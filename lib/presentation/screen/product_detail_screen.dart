@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:mini_mart/core/model/product.dart';
 import 'package:mini_mart/presentation/component/bullet_list_widget.dart';
 import 'package:mini_mart/presentation/component/custom_appbar.dart';
 import 'package:mini_mart/presentation/component/custom_button.dart';
@@ -8,7 +9,8 @@ import 'package:mini_mart/presentation/component/product_detail_card.dart';
 import 'package:mini_mart/presentation/theme/app_theme.dart';
 
 class ProductDetailScreen extends StatelessWidget {
-  const ProductDetailScreen({super.key});
+  final Product product;
+  const ProductDetailScreen({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
@@ -32,8 +34,11 @@ class ProductDetailScreen extends StatelessWidget {
                 padding: const EdgeInsets.fromLTRB(16, 12, 16, 0),
                 child: ListView(
                   children: [
-                    ProductDetailCard(),
-                    BulletListWidget(title: 'About this item ', items: list),
+                    ProductDetailCard(product),
+                    BulletListWidget(
+                      title: 'About this item ',
+                      items: product.descriptions,
+                    ),
                   ],
                 ),
               ),

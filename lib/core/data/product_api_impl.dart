@@ -1,4 +1,5 @@
 import 'package:mini_mart/core/data/product_api.dart';
+import 'package:mini_mart/core/images/app_images.dart';
 import 'package:mini_mart/core/model/product.dart';
 
 class ProductApiImpl implements ProductApi {
@@ -13,7 +14,7 @@ List<Product> products = [
   Product(
     id: '1',
     name: 'Wireless Noise-Cancelling Headphones',
-    image: 'https://example.com/headphones.jpg',
+    image: AppImages.macbookPro,
     colorHex: '#1E88E5',
     amount: 299.99,
     shippingFee: 9.99,
@@ -32,7 +33,7 @@ List<Product> products = [
   Product(
     id: '2',
     name: 'Smart Fitness Watch',
-    image: 'https://example.com/smartwatch.jpg',
+    image: AppImages.macbookPro,
     colorHex: '#43A047',
     amount: 449.50,
     shippingFee: 12.99,
@@ -52,7 +53,7 @@ List<Product> products = [
   Product(
     id: '3',
     name: 'Adjustable Aluminum Laptop Stand',
-    image: 'https://example.com/laptop-stand.jpg',
+    image: AppImages.macbookPro,
     colorHex: '#FF7043',
     amount: 89.99,
     shippingFee: 7.50,
@@ -71,7 +72,7 @@ List<Product> products = [
   Product(
     id: '4',
     name: 'Portable Bluetooth Speaker',
-    image: 'https://example.com/speaker.jpg',
+    image: AppImages.macbookPro,
     colorHex: '#8E24AA',
     amount: 179.99,
     shippingFee: 8.99,
@@ -90,7 +91,7 @@ List<Product> products = [
   Product(
     id: '5',
     name: 'RGB Gaming Mouse',
-    image: 'https://example.com/gaming-mouse.jpg',
+    image: AppImages.macbookPro,
     colorHex: '#E53935',
     amount: 79.99,
     shippingFee: 5.99,
@@ -109,7 +110,7 @@ List<Product> products = [
   Product(
     id: '6',
     name: '7-in-1 USB-C Hub',
-    image: 'https://example.com/usb-hub.jpg',
+    image: AppImages.macbookPro,
     colorHex: '#546E7A',
     amount: 124.99,
     shippingFee: 6.99,
@@ -128,7 +129,7 @@ List<Product> products = [
   Product(
     id: '7',
     name: 'Fast Wireless Charging Pad',
-    image: 'https://example.com/wireless-charger.jpg',
+    image: AppImages.macbookPro,
     colorHex: '#FFA726',
     amount: 39.99,
     shippingFee: 4.99,
@@ -147,7 +148,7 @@ List<Product> products = [
   Product(
     id: '8',
     name: 'Mechanical Gaming Keyboard',
-    image: 'https://example.com/gaming-keyboard.jpg',
+    image: AppImages.macbookPro,
     colorHex: '#9C27B0',
     amount: 189.99,
     shippingFee: 11.99,

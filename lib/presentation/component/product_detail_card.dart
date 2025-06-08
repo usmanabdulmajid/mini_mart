@@ -1,17 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 import 'package:mini_mart/core/icons/app_icons.dart';
-import 'package:mini_mart/core/images/app_images.dart';
+import 'package:mini_mart/core/model/product.dart';
+import 'package:mini_mart/presentation/provider/product_provider.dart';
 import 'package:mini_mart/presentation/theme/app_theme.dart';
 
-class ProductDetailCard extends StatelessWidget {
-  const ProductDetailCard({super.key});
+class ProductDetailCard extends ConsumerStatefulWidget {
+  final Product product;
+  const ProductDetailCard(this.product, {super.key});
+
+  @override
+  ConsumerState<ProductDetailCard> createState() => _ProductDetailCardState();
+}
+
+class _ProductDetailCardState extends ConsumerState<ProductDetailCard> {
+  late final isFavouriteNotifier = ValueNotifier(widget.product.isFavourite);
+
+  @override
+  void dispose() {
+    super.dispose();
+    isFavouriteNotifier.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    ;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -24,21 +39,38 @@ class ProductDetailCard extends StatelessWidget {
                 color: theme.appStyles.productCardStyle.imageBackgroundColor,
                 borderRadius: BorderRadius.circular(16),
               ),
-              child: Image.asset(AppImages.macbookPro),
+              child: Hero(
+                tag: widget.product.id,
+                transitionOnUserGestures: true,
+                child: Image.asset(widget.product.image),
+              ),
             ),
             Align(
               alignment: Alignment.topRight,
-              child: FavoriteButton(isFavorite: true),
+              child: GestureDetector(
+                onTap: () {
+                  isFavouriteNotifier.value = !isFavouriteNotifier.value;
+                  ref
+                      .read(productsProvider.notifier)
+                      .toggleFavourite(
+                        widget.product.id,
+                        isFavouriteNotifier.value,
+                      );
+                },
+                child: ValueListenableBuilder(
+                  valueListenable: isFavouriteNotifier,
+                  builder: (context, favourite, child) {
+                    return FavoriteButton(isFavorite: favourite);
+                  },
+                ),
+              ),
             ),
           ],
         ),
         const Gap(10.58),
-        Text(
-          'M4 Macbook Air 13” 256GB|Sky blue',
-          style: theme.appTextStyles.subtitle1,
-        ),
+        Text(widget.product.name, style: theme.appTextStyles.subtitle1),
         const Gap(4),
-        Text('\$1000.00', style: theme.appTextStyles.header1),
+        Text('\$${widget.product.amount}', style: theme.appTextStyles.header1),
       ],
     );
   }
