@@ -1,18 +1,33 @@
 import 'dart:convert';
 import 'dart:ui';
 
+import 'package:flutter/foundation.dart';
+
 class Product {
   final String id;
   final String name;
   final String image;
   final String colorHex;
   final num amount;
+  final num shippingFee;
+  final int quantity;
+  final List<String> descriptions;
+  final bool inCart;
+  final bool inStock;
+  final bool isFavourite;
+
   Product({
     required this.id,
     required this.name,
     required this.image,
     required this.colorHex,
     required this.amount,
+    required this.shippingFee,
+    required this.quantity,
+    required this.descriptions,
+    required this.inCart,
+    required this.inStock,
+    required this.isFavourite,
   });
 
   Product copyWith({
@@ -21,6 +36,12 @@ class Product {
     String? image,
     String? colorHex,
     num? amount,
+    num? shippingFee,
+    int? quantity,
+    List<String>? descriptions,
+    bool? inCart,
+    bool? inStock,
+    bool? isFavourite,
   }) {
     return Product(
       id: id ?? this.id,
@@ -28,6 +49,12 @@ class Product {
       image: image ?? this.image,
       colorHex: colorHex ?? this.colorHex,
       amount: amount ?? this.amount,
+      shippingFee: shippingFee ?? this.shippingFee,
+      quantity: quantity ?? this.quantity,
+      descriptions: descriptions ?? this.descriptions,
+      inCart: inCart ?? this.inCart,
+      inStock: inStock ?? this.inStock,
+      isFavourite: isFavourite ?? this.isFavourite,
     );
   }
 
@@ -38,6 +65,12 @@ class Product {
       'image': image,
       'colorHex': colorHex,
       'amount': amount,
+      'shippingFee': shippingFee,
+      'quantity': quantity,
+      'descriptions': descriptions,
+      'inCart': inCart,
+      'inStock': inStock,
+      'isFavourite': isFavourite,
     };
   }
 
@@ -48,6 +81,12 @@ class Product {
       image: map['image'] ?? '',
       colorHex: map['colorHex'] ?? '',
       amount: map['amount'] ?? 0,
+      shippingFee: map['shippingFee'] ?? 0,
+      quantity: map['quantity']?.toInt() ?? 0,
+      descriptions: List<String>.from(map['descriptions']),
+      inCart: map['inCart'] ?? false,
+      inStock: map['inStock'] ?? false,
+      isFavourite: map['isFavourite'] ?? false,
     );
   }
 
@@ -66,7 +105,7 @@ class Product {
 
   @override
   String toString() {
-    return 'Product(id: $id, name: $name, image: $image, colorHex: $colorHex, amount: $amount)';
+    return 'Product(id: $id, name: $name, image: $image, colorHex: $colorHex, amount: $amount, shippingFee: $shippingFee, quantity: $quantity, descriptions: $descriptions, inCart: $inCart, inStock: $inStock, isFavourite: $isFavourite)';
   }
 
   @override
@@ -78,7 +117,13 @@ class Product {
         other.name == name &&
         other.image == image &&
         other.colorHex == colorHex &&
-        other.amount == amount;
+        other.amount == amount &&
+        other.shippingFee == shippingFee &&
+        other.quantity == quantity &&
+        listEquals(other.descriptions, descriptions) &&
+        other.inCart == inCart &&
+        other.inStock == inStock &&
+        other.isFavourite == isFavourite;
   }
 
   @override
@@ -87,6 +132,12 @@ class Product {
         name.hashCode ^
         image.hashCode ^
         colorHex.hashCode ^
-        amount.hashCode;
+        amount.hashCode ^
+        shippingFee.hashCode ^
+        quantity.hashCode ^
+        descriptions.hashCode ^
+        inCart.hashCode ^
+        inStock.hashCode ^
+        isFavourite.hashCode;
   }
 }
