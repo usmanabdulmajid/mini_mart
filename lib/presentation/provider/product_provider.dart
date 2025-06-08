@@ -1,5 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:mini_mart/core/data/product_api.dart';
+import 'package:mini_mart/data/product_api.dart';
 import 'package:mini_mart/core/model/product.dart';
 import 'package:mini_mart/injection_container.dart';
 

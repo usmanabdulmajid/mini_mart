@@ -1,4 +1,4 @@
-import 'package:mini_mart/core/data/product_api.dart';
+import 'package:mini_mart/data/product_api.dart';
 import 'package:mini_mart/core/images/app_images.dart';
 import 'package:mini_mart/core/model/product.dart';
 
