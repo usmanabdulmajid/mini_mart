@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gap/gap.dart';
 import 'package:mini_mart/presentation/component/cart_item_tile.dart';
 import 'package:mini_mart/presentation/component/custom_appbar.dart';
+import 'package:mini_mart/presentation/component/order_info_tile.dart';
 import 'package:mini_mart/presentation/component/pop_button.dart';
 import 'package:mini_mart/presentation/provider/cart_provider.dart';
 import 'package:mini_mart/presentation/theme/app_theme.dart';
@@ -41,26 +42,31 @@ class CartScreen extends StatelessWidget {
                         ),
                       );
                     }
-                    return ListView.builder(
-                      itemCount: cartItems.length,
-                      itemBuilder: (context, index) {
-                        final item = cartItems[index];
-                        return CartItemTile(
-                          item: item,
-                          onIncrease:
-                              () => ref
-                                  .read(cartProvider.notifier)
-                                  .increaseQuantity(item.id),
-                          onDecrease:
-                              () => ref
-                                  .read(cartProvider.notifier)
-                                  .decreaseQuantity(item.id),
-                          onRemove:
-                              () => ref
-                                  .read(cartProvider.notifier)
-                                  .removeItem(item.id),
-                        );
-                      },
+                    return ListView(
+                      children: [
+                        ...cartItems.map(
+                          (item) => CartItemTile(
+                            item: item,
+                            onIncrease:
+                                () => ref
+                                    .read(cartProvider.notifier)
+                                    .increaseQuantity(item.id),
+                            onDecrease:
+                                () => ref
+                                    .read(cartProvider.notifier)
+                                    .decreaseQuantity(item.id),
+                            onRemove:
+                                () => ref
+                                    .read(cartProvider.notifier)
+                                    .removeItem(item.id),
+                          ),
+                        ),
+                        OrderInfoTile(
+                          subtotal:
+                              ref.watch(cartProvider.notifier).totalAmount,
+                          shippingFee: 20,
+                        ),
+                      ],
                     );
                   },
                 ),

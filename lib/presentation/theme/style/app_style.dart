@@ -165,6 +165,7 @@ abstract class AppStyle {
       decreaseItemCountIconBackgroundColor: AppPalette.catSkillWhite,
       increaseItemCountIconColor: AppPalette.pickledBluewood,
       increaseItemCountIconBackgroundColor: AppPalette.white,
+      increaseItemCountIconBorderColor: AppPalette.catSkillWhite,
       itemNameTextStyle: TextStyle(
         fontSize: 12,
         fontWeight: FontWeight.w400,
@@ -199,6 +200,7 @@ abstract class AppStyle {
       decreaseItemCountIconBackgroundColor: AppPalette.catSkillWhite,
       increaseItemCountIconColor: AppPalette.pickledBluewood,
       increaseItemCountIconBackgroundColor: AppPalette.white,
+      increaseItemCountIconBorderColor: AppPalette.catSkillWhite,
       itemNameTextStyle: TextStyle(
         fontSize: 12,
         fontWeight: FontWeight.w400,

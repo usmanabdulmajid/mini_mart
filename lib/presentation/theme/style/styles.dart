@@ -211,6 +211,7 @@ class CartItemStyle {
   final Color decreaseItemCountIconBackgroundColor;
   final Color increaseItemCountIconColor;
   final Color increaseItemCountIconBackgroundColor;
+  final Color increaseItemCountIconBorderColor;
   final TextStyle itemNameTextStyle;
   final TextStyle itemAmountTextStyle;
   final TextStyle itemInStockTextStyle;
@@ -224,6 +225,7 @@ class CartItemStyle {
     required this.decreaseItemCountIconBackgroundColor,
     required this.increaseItemCountIconColor,
     required this.increaseItemCountIconBackgroundColor,
+    required this.increaseItemCountIconBorderColor,
     required this.itemNameTextStyle,
     required this.itemAmountTextStyle,
     required this.itemInStockTextStyle,
@@ -239,6 +241,7 @@ class CartItemStyle {
     Color? decreaseItemCountIconBackgroundColor,
     Color? increaseItemCountIconColor,
     Color? increaseItemCountIconBackgroundColor,
+    Color? increaseItemCountIconBorderColor,
     TextStyle? itemNameTextStyle,
     TextStyle? itemAmountTextStyle,
     TextStyle? itemInStockTextStyle,
@@ -260,6 +263,9 @@ class CartItemStyle {
       increaseItemCountIconBackgroundColor:
           increaseItemCountIconBackgroundColor ??
           this.increaseItemCountIconBackgroundColor,
+      increaseItemCountIconBorderColor:
+          increaseItemCountIconBorderColor ??
+          this.increaseItemCountIconBorderColor,
       itemNameTextStyle: itemNameTextStyle ?? this.itemNameTextStyle,
       itemAmountTextStyle: itemAmountTextStyle ?? this.itemAmountTextStyle,
       itemInStockTextStyle: itemInStockTextStyle ?? this.itemInStockTextStyle,

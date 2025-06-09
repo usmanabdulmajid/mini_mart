@@ -23,7 +23,7 @@ class CartItemTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context).appStyles.cartItemStyle;
     return Container(
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.fromLTRB(10, 13, 10, 13),
       margin: EdgeInsets.only(bottom: 15),
       decoration: BoxDecoration(
         color: theme.backgroundColor,
@@ -76,7 +76,7 @@ class CartItemTile extends StatelessWidget {
                           ? theme.itemInStockTextStyle
                           : theme.itemOutStockTextStyle,
                 ),
-                const Gap(12),
+                const Gap(8),
                 Row(
                   children: [
                     Container(
@@ -108,6 +108,10 @@ class CartItemTile extends StatelessWidget {
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         color: theme.increaseItemCountIconBackgroundColor,
+                        border: Border.all(
+                          color: theme.increaseItemCountIconBorderColor,
+                          width: 1,
+                        ),
                       ),
                       child: IconButton(
                         onPressed: onIncrease,
@@ -126,7 +130,10 @@ class CartItemTile extends StatelessWidget {
                       child: IconButton(
                         onPressed: onRemove,
                         padding: EdgeInsets.zero,
-                        icon: SvgPicture.asset(AppIcons.delete),
+                        icon: SvgPicture.asset(
+                          AppIcons.delete,
+                          color: theme.deleteIconColor,
+                        ),
                       ),
                     ),
                   ],
