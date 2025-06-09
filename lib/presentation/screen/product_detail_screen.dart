@@ -6,6 +6,7 @@ import 'package:mini_mart/core/model/product.dart';
 import 'package:mini_mart/presentation/component/bullet_list_widget.dart';
 import 'package:mini_mart/presentation/component/custom_appbar.dart';
 import 'package:mini_mart/presentation/component/custom_button.dart';
+import 'package:mini_mart/presentation/component/custom_toast.dart';
 import 'package:mini_mart/presentation/component/pop_button.dart';
 import 'package:mini_mart/presentation/component/product_detail_card.dart';
 import 'package:mini_mart/presentation/provider/cart_provider.dart';
@@ -74,6 +75,7 @@ class ProductDetailScreen extends ConsumerWidget {
                 inStock: product.inStock,
               );
               ref.read(cartProvider.notifier).addItem(cartIem);
+              CustomToast.show(context, message: 'Item has been added to cart');
             },
           ),
         ),

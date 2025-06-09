@@ -11,4 +11,6 @@ abstract class AppIcons {
   static const String search = 'assets/icon/search_icon.svg';
   static const String chevronLeft = 'assets/icon/chevron_left_icon.svg';
   static const String favouriteFilled = 'assets/icon/favourite_filled_icon.svg';
+  static const String checkCircle = 'assets/icon/check_circle_icon.svg';
+  static const String close = 'assets/icon/close_icon.svg';
 }
