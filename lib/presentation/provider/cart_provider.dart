@@ -67,3 +67,8 @@ class CartNotifier extends Notifier<List<CartItem>> {
 final cartProvider = NotifierProvider<CartNotifier, List<CartItem>>(() {
   return CartNotifier();
 });
+
+final cartTotalProvider = Provider<double>((ref) {
+  final cartItems = ref.watch(cartProvider);
+  return cartItems.fold(0, (sum, item) => sum + item.totalPrice);
+});

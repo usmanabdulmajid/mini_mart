@@ -45,6 +45,7 @@ class OrderInfoTile extends StatelessWidget {
             ),
           ],
         ),
+        const Gap(15),
       ],
     );
   }

@@ -3,16 +3,20 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gap/gap.dart';
 import 'package:mini_mart/presentation/component/cart_item_tile.dart';
 import 'package:mini_mart/presentation/component/custom_appbar.dart';
+import 'package:mini_mart/presentation/component/custom_button.dart';
 import 'package:mini_mart/presentation/component/order_info_tile.dart';
 import 'package:mini_mart/presentation/component/pop_button.dart';
 import 'package:mini_mart/presentation/provider/cart_provider.dart';
+import 'package:mini_mart/presentation/screen/home.dart';
 import 'package:mini_mart/presentation/theme/app_theme.dart';
 
-class CartScreen extends StatelessWidget {
+class CartScreen extends ConsumerWidget {
   const CartScreen({super.key});
 
+  final num _shippingFee = 20;
+
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
     return SafeArea(
       child: Scaffold(
@@ -26,7 +30,12 @@ class CartScreen extends StatelessWidget {
               color: theme.appColors.dividerColor,
               thickness: 1,
             ),
-            PopButton(title: 'Your Cart'),
+            PopButton(
+              title: 'Your Cart',
+              onPressed: () {
+                ref.read(pageIndexProvider.notifier).state = 0;
+              },
+            ),
             Expanded(
               child: Container(
                 color: theme.appColors.backgroundColor,
@@ -62,9 +71,8 @@ class CartScreen extends StatelessWidget {
                           ),
                         ),
                         OrderInfoTile(
-                          subtotal:
-                              ref.watch(cartProvider.notifier).totalAmount,
-                          shippingFee: 20,
+                          subtotal: ref.watch(cartTotalProvider),
+                          shippingFee: _shippingFee,
                         ),
                       ],
                     );
@@ -73,6 +81,34 @@ class CartScreen extends StatelessWidget {
               ),
             ),
           ],
+        ),
+        bottomNavigationBar: Consumer(
+          builder: (context, ref, child) {
+            final totalAmount = ref.watch(cartTotalProvider);
+            if (totalAmount <= 0) {
+              return SizedBox();
+            }
+            return Container(
+              height: 90,
+              padding: const EdgeInsets.fromLTRB(18.8, 12, 18.8, 6),
+              decoration: BoxDecoration(
+                color: theme.appColors.primary,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.05),
+                    blurRadius: 5,
+                    offset: Offset(0, -2),
+                  ),
+                ],
+              ),
+              alignment: Alignment.topCenter,
+              child: CustomButton(
+                text:
+                    'Checkout (\$${(totalAmount + _shippingFee).toStringAsFixed(2)})',
+                onPressed: () {},
+              ),
+            );
+          },
         ),
       ),
     );
