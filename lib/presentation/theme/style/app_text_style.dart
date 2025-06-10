@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mini_mart/presentation/theme/style/app_font.dart';
 
 import 'package:mini_mart/presentation/theme/style/app_palette.dart';
 
@@ -10,11 +11,13 @@ abstract class AppTextStyle {
       fontSize: 10,
       fontWeight: FontWeight.w600,
       color: AppPalette.pickledBluewood,
+      fontFamily: AppFont.ibmPlexSans,
     ),
     dark: TextStyle(
       fontSize: 10,
       fontWeight: FontWeight.w600,
       color: AppPalette.pickledBluewood,
+      fontFamily: AppFont.ibmPlexSans,
     ),
   );
 
@@ -23,11 +26,13 @@ abstract class AppTextStyle {
       fontSize: 18,
       fontWeight: FontWeight.w700,
       color: AppPalette.black,
+      fontFamily: AppFont.ibmPlexSans,
     ),
     dark: TextStyle(
       fontSize: 18,
       fontWeight: FontWeight.w700,
       color: AppPalette.black,
+      fontFamily: AppFont.ibmPlexSans,
     ),
   );
 
@@ -36,27 +41,53 @@ abstract class AppTextStyle {
       fontSize: 18,
       fontWeight: FontWeight.w500,
       color: AppPalette.black,
+      fontFamily: AppFont.ibmPlexMono,
     ),
     dark: TextStyle(
       fontSize: 18,
       fontWeight: FontWeight.w500,
       color: AppPalette.black,
+      fontFamily: AppFont.ibmPlexMono,
     ),
   );
 
   static const ThemePair<TextStyle> subtitle1 = ThemePair<TextStyle>(
-    light: TextStyle(fontSize: 17, color: AppPalette.black),
-    dark: TextStyle(fontSize: 17, color: AppPalette.black),
+    light: TextStyle(
+      fontSize: 17,
+      color: AppPalette.black,
+      fontFamily: AppFont.ibmPlexSans,
+    ),
+    dark: TextStyle(
+      fontSize: 17,
+      color: AppPalette.black,
+      fontFamily: AppFont.ibmPlexSans,
+    ),
   );
 
   static const ThemePair<TextStyle> body1 = ThemePair<TextStyle>(
-    light: TextStyle(fontSize: 14, color: AppPalette.black),
-    dark: TextStyle(fontSize: 14, color: AppPalette.black),
+    light: TextStyle(
+      fontSize: 14,
+      color: AppPalette.black,
+      fontFamily: AppFont.ibmPlexSans,
+    ),
+    dark: TextStyle(
+      fontSize: 14,
+      color: AppPalette.black,
+      fontFamily: AppFont.ibmPlexSans,
+    ),
   );
 
   static const ThemePair<TextStyle> body2 = ThemePair<TextStyle>(
-    light: TextStyle(fontSize: 14, color: AppPalette.dustyGray),
-    dark: TextStyle(fontSize: 14, color: AppPalette.dustyGray),
+    light: TextStyle(
+      fontSize: 14,
+      color: AppPalette.dustyGray,
+      fontFamily: AppFont.ibmPlexSans,
+    ),
+    dark: TextStyle(
+      fontSize: 14,
+      color: AppPalette.dustyGray,
+      fontFamily: AppFont.ibmPlexSans,
+    ),
   );
 
   static const ThemePair<TextStyle> header1 = ThemePair<TextStyle>(
@@ -64,11 +95,13 @@ abstract class AppTextStyle {
       fontSize: 32.75,
       fontWeight: FontWeight.w700,
       color: AppPalette.black,
+      fontFamily: AppFont.ibmPlexSans,
     ),
     dark: TextStyle(
       fontSize: 32.75,
       fontWeight: FontWeight.w700,
       color: AppPalette.black,
+      fontFamily: AppFont.ibmPlexSans,
     ),
   );
 
@@ -77,11 +110,13 @@ abstract class AppTextStyle {
       fontSize: 16,
       fontWeight: FontWeight.w700,
       color: AppPalette.black,
+      fontFamily: AppFont.ibmPlexSans,
     ),
     dark: TextStyle(
       fontSize: 16,
       fontWeight: FontWeight.w700,
       color: AppPalette.black,
+      fontFamily: AppFont.ibmPlexSans,
     ),
   );
 
@@ -90,11 +125,13 @@ abstract class AppTextStyle {
       fontSize: 14,
       fontWeight: FontWeight.w700,
       color: AppPalette.black,
+      fontFamily: AppFont.ibmPlexSans,
     ),
     dark: TextStyle(
       fontSize: 14,
       fontWeight: FontWeight.w700,
       color: AppPalette.black,
+      fontFamily: AppFont.ibmPlexSans,
     ),
   );
 
@@ -103,11 +140,13 @@ abstract class AppTextStyle {
       fontSize: 12,
       fontWeight: FontWeight.w500,
       color: AppPalette.black,
+      fontFamily: AppFont.ibmPlexSans,
     ),
     dark: TextStyle(
       fontSize: 12,
       fontWeight: FontWeight.w500,
       color: AppPalette.black,
+      fontFamily: AppFont.ibmPlexSans,
     ),
   );
 }

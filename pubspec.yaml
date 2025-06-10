@@ -64,12 +64,40 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
+  fonts:
+    - family: IBM Plex Mono
+      fonts:
+        - asset: assets/font/IBM_Plex_Mono/IBMPlexMono-Regular.ttf
+        - asset: assets/font/IBM_Plex_Mono/IBMPlexMono-Bold.ttf
+          weight: 700
+        - asset: assets/font/IBM_Plex_Mono/IBMPlexMono-Light.ttf
+          weight: 300
+        - asset: assets/font/IBM_Plex_Mono/IBMPlexMono-Medium.ttf
+          weight: 500
+        - asset: assets/font/IBM_Plex_Mono/IBMPlexMono-SemiBold.ttf
+          weight: 600
+        - asset: assets/font/IBM_Plex_Mono/IBMPlexMono-Italic.ttf
+          style: italic
+        - asset: assets/font/IBM_Plex_Mono/IBMPlexMono-BoldItalic.ttf
+          weight: 700
+          style: italic
+
+    - family: IBM Plex Sans
+      fonts:
+        - asset: assets/font/IBM_Plex_Sans/IBMPlexSans-Regular.ttf
+        - asset: assets/font/IBM_Plex_Sans/IBMPlexSans-Bold.ttf
+          weight: 700
+        - asset: assets/font/IBM_Plex_Sans/IBMPlexSans-Light.ttf
+          weight: 300
+        - asset: assets/font/IBM_Plex_Sans/IBMPlexSans-Medium.ttf
+          weight: 500
+        - asset: assets/font/IBM_Plex_Sans/IBMPlexSans-SemiBold.ttf
+          weight: 600
+        - asset: assets/font/IBM_Plex_Sans/IBMPlexSans-Italic.ttf
+          style: italic
+        - asset: assets/font/IBM_Plex_Sans/IBMPlexSans-BoldItalic.ttf
+          weight: 700
+          style: italic
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

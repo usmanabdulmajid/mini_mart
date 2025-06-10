@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:mini_mart/presentation/theme/style/app_font.dart';
 import 'package:mini_mart/presentation/theme/style/app_palette.dart';
 import 'package:mini_mart/presentation/theme/style/styles.dart';
 import 'package:mini_mart/presentation/theme/style/theme_pair.dart';
@@ -14,6 +14,7 @@ abstract class AppStyle {
       textStyle: TextStyle(
         fontWeight: FontWeight.w600,
         color: AppPalette.pickledBluewood,
+        fontFamily: AppFont.ibmPlexSans,
       ),
     ),
     dark: ToastStyle(
@@ -24,6 +25,7 @@ abstract class AppStyle {
       textStyle: TextStyle(
         fontWeight: FontWeight.w600,
         color: AppPalette.pickledBluewood,
+        fontFamily: AppFont.ibmPlexSans,
       ),
     ),
   );
@@ -39,11 +41,13 @@ abstract class AppStyle {
         fontSize: 10,
         fontWeight: FontWeight.w600,
         color: AppPalette.malibu,
+        fontFamily: AppFont.ibmPlexSans,
       ),
       unselectedLabelStyle: TextStyle(
         fontSize: 10,
         fontWeight: FontWeight.w500,
         color: AppPalette.shipGray,
+        fontFamily: AppFont.ibmPlexSans,
       ),
       selectedFontSize: 10,
       unselectedFontSize: 10,
@@ -59,11 +63,13 @@ abstract class AppStyle {
         fontSize: 10,
         fontWeight: FontWeight.w600,
         color: AppPalette.malibu,
+        fontFamily: AppFont.ibmPlexSans,
       ),
       unselectedLabelStyle: TextStyle(
         fontSize: 10,
         fontWeight: FontWeight.w500,
         color: AppPalette.shipGray,
+        fontFamily: AppFont.ibmPlexSans,
       ),
       selectedFontSize: 10,
       unselectedFontSize: 10,
@@ -80,11 +86,13 @@ abstract class AppStyle {
         fontSize: 14,
         fontWeight: FontWeight.w700,
         color: AppPalette.white,
+        fontFamily: AppFont.ibmPlexSans,
       ),
       disableTextStyle: TextStyle(
         fontSize: 14,
         fontWeight: FontWeight.w700,
         color: AppPalette.slateGray,
+        fontFamily: AppFont.ibmPlexSans,
       ),
     ),
     dark: CustomButtonStyle(
@@ -95,22 +103,39 @@ abstract class AppStyle {
         fontSize: 14,
         fontWeight: FontWeight.w700,
         color: AppPalette.white,
+        fontFamily: AppFont.ibmPlexSans,
       ),
       disableTextStyle: TextStyle(
         fontSize: 14,
         fontWeight: FontWeight.w700,
         color: AppPalette.slateGray,
+        fontFamily: AppFont.ibmPlexSans,
       ),
     ),
   );
 
   static final ThemePair<InputFieldStyle> inputField = ThemePair(
     light: InputFieldStyle(
-      labelTextStyle: TextStyle(color: AppPalette.geyser),
-      hintTextStyle: TextStyle(color: AppPalette.geyser),
-      textStyle: TextStyle(color: AppPalette.geyser),
-      errorLabelTextStyle: TextStyle(color: AppPalette.radicalRed),
-      errorTextStyle: TextStyle(color: AppPalette.radicalRed),
+      labelTextStyle: TextStyle(
+        color: AppPalette.geyser,
+        fontFamily: AppFont.ibmPlexSans,
+      ),
+      hintTextStyle: TextStyle(
+        color: AppPalette.geyser,
+        fontFamily: AppFont.ibmPlexSans,
+      ),
+      textStyle: TextStyle(
+        color: AppPalette.geyser,
+        fontFamily: AppFont.ibmPlexSans,
+      ),
+      errorLabelTextStyle: TextStyle(
+        color: AppPalette.radicalRed,
+        fontFamily: AppFont.ibmPlexSans,
+      ),
+      errorTextStyle: TextStyle(
+        color: AppPalette.radicalRed,
+        fontFamily: AppFont.ibmPlexSans,
+      ),
       cursorColor: AppPalette.malibu,
       borderColor: AppPalette.catSkillWhite,
       focusBorderColor: AppPalette.catSkillWhite,
@@ -119,11 +144,26 @@ abstract class AppStyle {
       suffixIconColor: AppPalette.gullGray,
     ),
     dark: InputFieldStyle(
-      labelTextStyle: TextStyle(color: AppPalette.geyser),
-      hintTextStyle: TextStyle(color: AppPalette.geyser),
-      textStyle: TextStyle(color: AppPalette.geyser),
-      errorLabelTextStyle: TextStyle(color: AppPalette.radicalRed),
-      errorTextStyle: TextStyle(color: AppPalette.radicalRed),
+      labelTextStyle: TextStyle(
+        color: AppPalette.geyser,
+        fontFamily: AppFont.ibmPlexSans,
+      ),
+      hintTextStyle: TextStyle(
+        color: AppPalette.geyser,
+        fontFamily: AppFont.ibmPlexSans,
+      ),
+      textStyle: TextStyle(
+        color: AppPalette.geyser,
+        fontFamily: AppFont.ibmPlexSans,
+      ),
+      errorLabelTextStyle: TextStyle(
+        color: AppPalette.radicalRed,
+        fontFamily: AppFont.ibmPlexSans,
+      ),
+      errorTextStyle: TextStyle(
+        color: AppPalette.radicalRed,
+        fontFamily: AppFont.ibmPlexSans,
+      ),
       cursorColor: AppPalette.malibu,
       borderColor: AppPalette.catSkillWhite,
       focusBorderColor: AppPalette.catSkillWhite,
@@ -136,22 +176,40 @@ abstract class AppStyle {
   static final ThemePair<ProductCardStyle> productCard = ThemePair(
     light: ProductCardStyle(
       imageBackgroundColor: AppPalette.athensGray,
-      nameTextStyle: TextStyle(fontSize: 14, color: AppPalette.black),
-      descriptionTextStyle: TextStyle(fontSize: 14, color: AppPalette.black),
+      nameTextStyle: TextStyle(
+        fontSize: 14,
+        color: AppPalette.black,
+        fontFamily: AppFont.ibmPlexSans,
+      ),
+      descriptionTextStyle: TextStyle(
+        fontSize: 14,
+        color: AppPalette.black,
+        fontFamily: AppFont.ibmPlexSans,
+      ),
       amountTextStyle: TextStyle(
         fontSize: 16,
         fontWeight: FontWeight.w700,
         color: AppPalette.black,
+        fontFamily: AppFont.ibmPlexSans,
       ),
     ),
     dark: ProductCardStyle(
       imageBackgroundColor: AppPalette.athensGray,
-      nameTextStyle: TextStyle(fontSize: 14, color: AppPalette.black),
-      descriptionTextStyle: TextStyle(fontSize: 14, color: AppPalette.black),
+      nameTextStyle: TextStyle(
+        fontSize: 14,
+        color: AppPalette.black,
+        fontFamily: AppFont.ibmPlexSans,
+      ),
+      descriptionTextStyle: TextStyle(
+        fontSize: 14,
+        color: AppPalette.black,
+        fontFamily: AppFont.ibmPlexSans,
+      ),
       amountTextStyle: TextStyle(
         fontSize: 16,
         fontWeight: FontWeight.w700,
         color: AppPalette.black,
+        fontFamily: AppFont.ibmPlexSans,
       ),
     ),
   );
@@ -170,26 +228,31 @@ abstract class AppStyle {
         fontSize: 12,
         fontWeight: FontWeight.w400,
         color: AppPalette.pickledBluewood,
+        fontFamily: AppFont.ibmPlexSans,
       ),
       itemAmountTextStyle: TextStyle(
         fontSize: 17,
         fontWeight: FontWeight.w600,
         color: AppPalette.pickledBluewood,
+        fontFamily: AppFont.ibmPlexSans,
       ),
       itemInStockTextStyle: TextStyle(
         fontSize: 12,
         fontWeight: FontWeight.w400,
         color: AppPalette.mountainMeadow,
+        fontFamily: AppFont.ibmPlexSans,
       ),
       itemOutStockTextStyle: TextStyle(
         fontSize: 12,
         fontWeight: FontWeight.w400,
         color: AppPalette.radicalRed,
+        fontFamily: AppFont.ibmPlexSans,
       ),
       itemCountTextStyle: TextStyle(
         fontSize: 12,
         fontWeight: FontWeight.w400,
         color: AppPalette.pickledBluewood,
+        fontFamily: AppFont.ibmPlexSans,
       ),
     ),
     dark: CartItemStyle(
@@ -205,26 +268,31 @@ abstract class AppStyle {
         fontSize: 12,
         fontWeight: FontWeight.w400,
         color: AppPalette.pickledBluewood,
+        fontFamily: AppFont.ibmPlexSans,
       ),
       itemAmountTextStyle: TextStyle(
         fontSize: 17,
         fontWeight: FontWeight.w600,
         color: AppPalette.pickledBluewood,
+        fontFamily: AppFont.ibmPlexSans,
       ),
       itemInStockTextStyle: TextStyle(
         fontSize: 12,
         fontWeight: FontWeight.w400,
         color: AppPalette.mountainMeadow,
+        fontFamily: AppFont.ibmPlexSans,
       ),
       itemOutStockTextStyle: TextStyle(
         fontSize: 12,
         fontWeight: FontWeight.w400,
         color: AppPalette.radicalRed,
+        fontFamily: AppFont.ibmPlexSans,
       ),
       itemCountTextStyle: TextStyle(
         fontSize: 12,
         fontWeight: FontWeight.w400,
         color: AppPalette.pickledBluewood,
+        fontFamily: AppFont.ibmPlexSans,
       ),
     ),
   );
