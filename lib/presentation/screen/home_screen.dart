@@ -12,9 +12,15 @@ import 'package:mini_mart/presentation/screen/product_detail_screen.dart';
 import 'package:mini_mart/presentation/theme/app_theme.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
-class HomeScreen extends StatelessWidget {
-  HomeScreen({super.key});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  final _controller = TextEditingController();
   final shimmerData = Product(
     id: '8',
     name: 'Mechanical Gaming Keyboard',
@@ -28,6 +34,11 @@ class HomeScreen extends StatelessWidget {
     inStock: true,
     isFavourite: true,
   );
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +52,7 @@ class HomeScreen extends StatelessWidget {
             const Gap(12),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: SearchTextField(),
+              child: SearchTextField(controller: _controller),
             ),
             const Gap(12),
             Divider(
@@ -69,30 +80,47 @@ class HomeScreen extends StatelessWidget {
                         return productAsyncValue.when(
                           data: (products) {
                             return Expanded(
-                              child: GridView.builder(
-                                gridDelegate:
-                                    const SliverGridDelegateWithFixedCrossAxisCount(
-                                      crossAxisCount: 2,
-                                      crossAxisSpacing: 12,
-                                      mainAxisSpacing: 12,
-                                      childAspectRatio: 0.65,
-                                    ),
-                                itemCount: products.length,
-                                itemBuilder: (context, index) {
-                                  final product = products[index];
-                                  return GestureDetector(
-                                    onTap: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder:
-                                              (context) => ProductDetailScreen(
-                                                product: product,
-                                              ),
+                              child: ListenableBuilder(
+                                listenable: _controller,
+                                builder: (context, child) {
+                                  final controlledProducts =
+                                      products.where((element) {
+                                        if (_controller.text.isNotEmpty) {
+                                          return element.name
+                                              .toLowerCase()
+                                              .contains(
+                                                _controller.text.toLowerCase(),
+                                              );
+                                        }
+                                        return true;
+                                      }).toList();
+                                  return GridView.builder(
+                                    gridDelegate:
+                                        const SliverGridDelegateWithFixedCrossAxisCount(
+                                          crossAxisCount: 2,
+                                          crossAxisSpacing: 12,
+                                          mainAxisSpacing: 12,
+                                          childAspectRatio: 0.65,
                                         ),
+                                    itemCount: controlledProducts.length,
+                                    itemBuilder: (context, index) {
+                                      final product = controlledProducts[index];
+                                      return GestureDetector(
+                                        onTap: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder:
+                                                  (context) =>
+                                                      ProductDetailScreen(
+                                                        product: product,
+                                                      ),
+                                            ),
+                                          );
+                                        },
+                                        child: ProductCard(product: product),
                                       );
                                     },
-                                    child: ProductCard(product: product),
                                   );
                                 },
                               ),

@@ -48,6 +48,7 @@ class _HomeState extends State<Home> {
                 return CustomBottomNav(
                   currentIndex: currentIndex,
                   onTap: (index) {
+                    FocusManager.instance.primaryFocus?.unfocus();
                     ref.read(pageIndexProvider.notifier).state = index;
                   },
                   items: [
