@@ -1,5 +1,4 @@
 import 'package:mini_mart/data/product_api.dart';
-import 'package:mini_mart/core/images/app_images.dart';
 import 'package:mini_mart/core/model/product.dart';
 
 class ProductApiImpl implements ProductApi {
@@ -14,7 +13,7 @@ List<Product> products = [
   Product(
     id: '1',
     name: 'Wireless Noise-Cancelling Headphones',
-    image: AppImages.macbookPro,
+    image: 'assets/image/headphone.png',
     colorHex: '#1E88E5',
     amount: 299.99,
     shippingFee: 9.99,
@@ -33,7 +32,7 @@ List<Product> products = [
   Product(
     id: '2',
     name: 'Smart Fitness Watch',
-    image: AppImages.macbookPro,
+    image: 'assets/image/smart_fitness_watch.png',
     colorHex: '#43A047',
     amount: 449.50,
     shippingFee: 12.99,
@@ -53,7 +52,7 @@ List<Product> products = [
   Product(
     id: '3',
     name: 'Adjustable Aluminum Laptop Stand',
-    image: AppImages.macbookPro,
+    image: 'assets/image/laptop_stand.png',
     colorHex: '#FF7043',
     amount: 89.99,
     shippingFee: 7.50,
@@ -72,7 +71,7 @@ List<Product> products = [
   Product(
     id: '4',
     name: 'Portable Bluetooth Speaker',
-    image: AppImages.macbookPro,
+    image: 'assets/image/bluetooth_speaker.png',
     colorHex: '#8E24AA',
     amount: 179.99,
     shippingFee: 8.99,
@@ -91,7 +90,7 @@ List<Product> products = [
   Product(
     id: '5',
     name: 'RGB Gaming Mouse',
-    image: AppImages.macbookPro,
+    image: 'assets/image/rgb_gaming_mouse.png',
     colorHex: '#E53935',
     amount: 79.99,
     shippingFee: 5.99,
@@ -109,8 +108,8 @@ List<Product> products = [
   ),
   Product(
     id: '6',
-    name: '7-in-1 USB-C Hub',
-    image: AppImages.macbookPro,
+    name: '3-in-1 USB-C Hub',
+    image: 'assets/image/three_in_one_usb_c_hub.png',
     colorHex: '#546E7A',
     amount: 124.99,
     shippingFee: 6.99,
@@ -128,18 +127,18 @@ List<Product> products = [
   ),
   Product(
     id: '7',
-    name: 'Fast Wireless Charging Pad',
-    image: AppImages.macbookPro,
+    name: 'MacBook Pro 2019 16-inch',
+    image: 'assets/image/macbook_pro.png',
     colorHex: '#FFA726',
     amount: 39.99,
     shippingFee: 4.99,
     quantity: 30,
     descriptions: [
-      '15W fast charging for compatible devices',
-      'Qi-certified for universal compatibility',
-      'LED indicator shows charging status',
-      'Non-slip design with cooling fan',
-      'Case-friendly charging up to 5mm thickness',
+      '16-inch Retina display with True Tone technology',
+      '9th-generation 8-core Intel Core i9 processor',
+      'AMD Radeon Pro 5500M graphics with GDDR6 memory',
+      'Up to 64GB of DDR4 memory and 8TB SSD storage',
+      'Six-speaker sound system with force-cancelling woofers',
     ],
     inCart: true,
     inStock: true,
@@ -148,7 +147,7 @@ List<Product> products = [
   Product(
     id: '8',
     name: 'Mechanical Gaming Keyboard',
-    image: AppImages.macbookPro,
+    image: 'assets/image/mechanical_gaming_keyboard.png',
     colorHex: '#9C27B0',
     amount: 189.99,
     shippingFee: 11.99,
