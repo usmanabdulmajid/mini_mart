@@ -37,8 +37,10 @@ class BottomNavStyle {
   final Color unselectedItemColor;
   final Color selectedAreaColor;
   final Color unselectedAreaColor;
+  final Color badgeColor;
   final TextStyle selectedLabelStyle;
   final TextStyle unselectedLabelStyle;
+  final TextStyle badgeTextStyle;
   final double selectedFontSize;
   final double unselectedFontSize;
   final double iconSize;
@@ -48,8 +50,10 @@ class BottomNavStyle {
     required this.unselectedItemColor,
     required this.selectedAreaColor,
     required this.unselectedAreaColor,
+    required this.badgeColor,
     required this.selectedLabelStyle,
     required this.unselectedLabelStyle,
+    required this.badgeTextStyle,
     required this.selectedFontSize,
     required this.unselectedFontSize,
     required this.iconSize,
@@ -61,8 +65,10 @@ class BottomNavStyle {
     Color? unselectedItemColor,
     Color? selectedAreaColor,
     Color? unselectedAreaColor,
+    Color? badgeColor,
     TextStyle? selectedLabelStyle,
     TextStyle? unselectedLabelStyle,
+    TextStyle? badgeTextStyle,
     double? selectedFontSize,
     double? unselectedFontSize,
     double? iconSize,
@@ -73,8 +79,10 @@ class BottomNavStyle {
       unselectedItemColor: unselectedItemColor ?? this.unselectedItemColor,
       selectedAreaColor: selectedAreaColor ?? this.selectedAreaColor,
       unselectedAreaColor: unselectedAreaColor ?? this.unselectedAreaColor,
+      badgeColor: badgeColor ?? this.badgeColor,
       selectedLabelStyle: selectedLabelStyle ?? this.selectedLabelStyle,
       unselectedLabelStyle: unselectedLabelStyle ?? this.unselectedLabelStyle,
+      badgeTextStyle: badgeTextStyle ?? this.badgeTextStyle,
       selectedFontSize: selectedFontSize ?? this.selectedFontSize,
       unselectedFontSize: unselectedFontSize ?? this.unselectedFontSize,
       iconSize: iconSize ?? this.iconSize,

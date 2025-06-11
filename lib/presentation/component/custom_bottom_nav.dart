@@ -55,9 +55,22 @@ class CustomBottomNav extends StatelessWidget {
                             color: theme.selectedAreaColor,
                             borderRadius: BorderRadius.circular(16),
                           ),
-                          child: item.activeIcon,
+                          child:
+                              item.badgeCount <= 0
+                                  ? item.activeIcon
+                                  : Badge.count(
+                                    count: item.badgeCount,
+                                    backgroundColor: theme.badgeColor,
+                                    child: item.activeIcon,
+                                  ),
                         )
-                        : item.icon,
+                        : item.badgeCount <= 0
+                        ? item.icon
+                        : Badge.count(
+                          count: item.badgeCount,
+                          backgroundColor: theme.badgeColor,
+                          child: item.icon,
+                        ),
                     Text(
                       item.label,
                       style:
@@ -79,10 +92,12 @@ class CustomBottomNavItem {
   final Widget activeIcon;
   final String label;
   final String? tooltip;
+  final int badgeCount;
   CustomBottomNavItem({
     required this.icon,
     required this.activeIcon,
     required this.label,
     this.tooltip,
+    this.badgeCount = 0,
   });
 }

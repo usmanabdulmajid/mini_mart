@@ -67,6 +67,7 @@ class _HomeState extends State<Home> {
                         color: AppPalette.white,
                       ),
                       label: 'Cart',
+                      badgeCount: ref.watch(cartProvider).length,
                     ),
                     CustomBottomNavItem(
                       icon: SvgPicture.asset(AppIcons.favourite),

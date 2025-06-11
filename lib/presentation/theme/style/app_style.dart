@@ -37,6 +37,7 @@ abstract class AppStyle {
       unselectedItemColor: AppPalette.black,
       selectedAreaColor: AppPalette.malibu,
       unselectedAreaColor: AppPalette.transparent,
+      badgeColor: AppPalette.oxfordBlue,
       selectedLabelStyle: TextStyle(
         fontSize: 10,
         fontWeight: FontWeight.w600,
@@ -47,6 +48,12 @@ abstract class AppStyle {
         fontSize: 10,
         fontWeight: FontWeight.w500,
         color: AppPalette.shipGray,
+        fontFamily: AppFont.ibmPlexSans,
+      ),
+      badgeTextStyle: TextStyle(
+        fontSize: 10,
+        fontWeight: FontWeight.w700,
+        color: AppPalette.white,
         fontFamily: AppFont.ibmPlexSans,
       ),
       selectedFontSize: 10,
@@ -59,6 +66,7 @@ abstract class AppStyle {
       unselectedItemColor: AppPalette.black,
       selectedAreaColor: AppPalette.malibu,
       unselectedAreaColor: AppPalette.transparent,
+      badgeColor: AppPalette.oxfordBlue,
       selectedLabelStyle: TextStyle(
         fontSize: 10,
         fontWeight: FontWeight.w600,
@@ -69,6 +77,12 @@ abstract class AppStyle {
         fontSize: 10,
         fontWeight: FontWeight.w500,
         color: AppPalette.shipGray,
+        fontFamily: AppFont.ibmPlexSans,
+      ),
+      badgeTextStyle: TextStyle(
+        fontSize: 10,
+        fontWeight: FontWeight.w700,
+        color: AppPalette.white,
         fontFamily: AppFont.ibmPlexSans,
       ),
       selectedFontSize: 10,
