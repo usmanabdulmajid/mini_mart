@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
+import 'package:mini_mart/core/icons/app_icons.dart';
 import 'package:mini_mart/presentation/component/cart_item_tile.dart';
 import 'package:mini_mart/presentation/component/custom_appbar.dart';
 import 'package:mini_mart/presentation/component/custom_button.dart';
@@ -37,21 +39,30 @@ class CartScreen extends ConsumerWidget {
               },
             ),
             Expanded(
-              child: Container(
-                color: theme.appColors.backgroundColor,
-                padding: const EdgeInsets.fromLTRB(16, 12, 16, 0),
-                child: Consumer(
-                  builder: (context, ref, child) {
-                    final cartItems = ref.watch(cartProvider);
-                    if (cartItems.isEmpty) {
-                      return Center(
-                        child: Text(
-                          'Your cart is empty',
-                          style: theme.appTextStyles.title1,
+              child: Consumer(
+                builder: (context, ref, child) {
+                  final cartItems = ref.watch(cartProvider);
+                  if (cartItems.isEmpty) {
+                    return Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SvgPicture.asset(AppIcons.cart, height: 80, width: 80),
+                        const Gap(8),
+                        Text(
+                          'Nothing here yet',
+                          style: theme.appTextStyles.subtitle1,
                         ),
-                      );
-                    }
-                    return ListView(
+                        Text(
+                          'Add something to your cart to get started.',
+                          style: theme.appTextStyles.body1,
+                        ),
+                      ],
+                    );
+                  }
+                  return Container(
+                    color: theme.appColors.backgroundColor,
+                    padding: const EdgeInsets.fromLTRB(16, 12, 16, 0),
+                    child: ListView(
                       children: [
                         ...cartItems.map(
                           (item) => CartItemTile(
@@ -75,9 +86,9 @@ class CartScreen extends ConsumerWidget {
                           shippingFee: _shippingFee,
                         ),
                       ],
-                    );
-                  },
-                ),
+                    ),
+                  );
+                },
               ),
             ),
           ],
