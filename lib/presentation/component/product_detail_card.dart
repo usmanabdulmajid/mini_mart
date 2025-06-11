@@ -39,6 +39,7 @@ class _ProductDetailCardState extends ConsumerState<ProductDetailCard> {
                 color: theme.appStyles.productCardStyle.imageBackgroundColor,
                 borderRadius: BorderRadius.circular(16),
               ),
+              alignment: Alignment.center,
               child: Hero(
                 tag: widget.product.id,
                 transitionOnUserGestures: true,
