@@ -64,7 +64,8 @@ class ProductDetailScreen extends ConsumerWidget {
           ),
           alignment: Alignment.topCenter,
           child: CustomButton(
-            text: 'Add to Cart',
+            isDisabled: !product.inStock,
+            text: product.inStock ? 'Add to Cart' : 'Out of Stock',
             onPressed: () {
               final cartIem = CartItem(
                 id: product.id,

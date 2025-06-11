@@ -8,6 +8,7 @@ class CustomButton extends StatelessWidget {
   final double? borderRadius;
   final double height;
   final bool isLoading;
+  final bool isDisabled;
 
   const CustomButton({
     super.key,
@@ -17,6 +18,7 @@ class CustomButton extends StatelessWidget {
     this.borderRadius,
     this.height = 50,
     this.isLoading = false,
+    this.isDisabled = false,
   });
 
   @override
@@ -26,7 +28,7 @@ class CustomButton extends StatelessWidget {
       width: width ?? double.infinity,
       height: height,
       child: ElevatedButton(
-        onPressed: isLoading ? null : onPressed,
+        onPressed: isLoading || isDisabled ? null : onPressed,
         style: ElevatedButton.styleFrom(
           backgroundColor: theme.color,
           elevation: 0,
