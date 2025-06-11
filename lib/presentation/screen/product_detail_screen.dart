@@ -56,7 +56,7 @@ class ProductDetailScreen extends ConsumerWidget {
             color: theme.appColors.primary,
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withValues(alpha: 0.05),
+                color: Colors.black.withValues(alpha: 0.01),
                 blurRadius: 5,
                 offset: Offset(0, -2),
               ),

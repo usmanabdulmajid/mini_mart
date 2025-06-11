@@ -32,7 +32,7 @@ class CustomBottomNav extends StatelessWidget {
         color: backgroundColor ?? theme.backgroundColor,
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.05),
+            color: Colors.black.withValues(alpha: 0.01),
             blurRadius: 10,
             offset: Offset(0, -2),
           ),
