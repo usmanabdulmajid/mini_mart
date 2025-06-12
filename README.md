@@ -165,8 +165,7 @@ The app has been tested for:
 1. **Clone the repository**
 
    
-   `https://github.com/yourusername/ecommerce-mobile-app.git
-   cd ecommerce-mobile-app`
+   `https://github.com/usmanabdulmajid/mini_mart.git`
 
 2. **Install dependencies**
 
